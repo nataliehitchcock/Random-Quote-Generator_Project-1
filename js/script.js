@@ -5,52 +5,59 @@ project 1 - A Random Quote Generator
 
 // Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
+// Created an array of quote objects
+var quotes = [{
+  quote: 'Without music, life would be a mistake',
+  source: 'Friedrich Nietzsche',
+  citation: 'Brainpickings: Nietzsche on the Power of Music',
+},
 
-/*** 
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
+{
+  quote: 'Music should be an essential part of every analysis.',
+  source: 'Carl Jung',
+  citation: 'https://www.udiscovermusic.com/stories/15-inspirational-quotes-power-music/',
+  year: '1875-1961'
+},
 
+{
+  quote: 'Where words fail, music speaks.',
+  source: 'Hans Christian Andersen',
+  citation: 'https://www.cmuse.org/100-famous-and-inspirational-music-quotes/',
+},
 
+{
+  quote: 'Music touches us emotionally, where words alone can’t',
+  source: 'Johnny Depp',
+  citation: 'https://www.cmuse.org/100-famous-and-inspirational-music-quotes/',
+},
 
+{
+  quote: 'Music is by far the most wonderful method we have to remind us each day of the power of personal accomplishment.',
+  source: 'Chris S. Salazar,',
+  citation: 'https://www.wow4u.com/musicquotes/',
+}
+];
+// Created a random quote number generator that pulls from the quotes array
+function getRandomQuote(array) {
+var quoteIndex = Math.floor(Math.random() * (quotes.length));{
+var randomQuote = quotes[quoteIndex];
+}
+}
+// Created a function to print the quotes
+function printQuote() {
+var message = "";    
+var result = getRandomQuote(quotes);
+message = "<p class='quote'>" + result.quote + "</p>";
+message += "<p class='source'>" + result.source;
+message += "<span class='citation'>" + result.citation + "</span>";
+message += if(randQuote.year) { 
+  stringQuote += <span class="year"> randQuote.year </span> 
+}
+message += "</p>";
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
+document.getElementById('quote-box').innerHTML = message;
+}
 
-
-
-
-/***
-  Create the `printQuote` function to: 
-   - Call the `getRandomQuote` function and assign it to a variable.
-   - Create a variable for the HTML string and set it equal to an empty string.
-   - Use the HTML template in the instructions or the markup in the index.html file, AND 
-     the random quote vairable to build your HTML string.
-   - Add the quote and source section to the HTML string.
-   - Use an if statement to check for the citation property before adding it to the HTML string.
-   - Use an if statement to check for the year property before adding it to the HTML string.
-   - Don't forget to close that final `p` tag.
-   - Set the `innerHTML` of the `quote-box` div to the HTML string. 
-***/
-
-
-
-
-/***
-  When the "Show another quote" button is clicked, the event listener 
-  below will be triggered, and it will call, or "invoke", the `printQuote` 
-  function. So do not make any changes to the line of code below this 
-  comment.
-***/
+printQuote();
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
