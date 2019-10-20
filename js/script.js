@@ -9,7 +9,7 @@ project 1 - A Random Quote Generator
 var quotes = [{
   quote: 'Without music, life would be a mistake',
   source: 'Friedrich Nietzsche',
-  citation: 'Brainpickings: Nietzsche on the Power of Music',
+  citation: 'Brainpickings: Nietzsche on the Power of Music: https://www.brainpickings.org/2015/09/18/nietzsche-on-music/',
 },
 
 {
@@ -43,21 +43,39 @@ var quoteIndex = Math.floor(Math.random() * (quotes.length));{
 var randomQuote = quotes[quoteIndex];
 }
 }
-// Created a function to print the quotes
+// Created a function to print the quotes and change the background color at random
 function printQuote() {
 var message = "";    
 var result = getRandomQuote(quotes);
 message = "<p class='quote'>" + result.quote + "</p>";
 message += "<p class='source'>" + result.source;
-message += "<span class='citation'>" + result.citation + "</span>";
-message += if(randQuote.year) { 
-  stringQuote += <span class="year"> randQuote.year </span> 
+if (randomQuote.citation != 'Unknown') {
+  html += '<span class="citation">' + randomQuote.citation + '</span>';
 }
+if (randomQuote.year != 'Unknown') {
+  html += '<span class="year">' + randomQuote.year + '</span>';
 message += "</p>";
 
 document.getElementById('quote-box').innerHTML = message;
+
+randomBackgroundColor();
+    
+setInterval()
 }
+// This allows the quote to change every 12 seconds
+
+setInterval('printQuote()', 12000);
+
+// Created a random color generator, source: https://www.w3resource.com › javascript-math-exercise-40
+const randomBackgroundColor = () => {
+	red = Math.floor(Math.random() * 256);
+	green = Math.floor(Math.random() * 256);
+	blue = Math.floor(Math.random() * 256);
+	let color = `rgb(${red}, ${green},  ${blue})`;
+
+   	document.body.style.backgroundColor = color;
+   };
 
 printQuote();
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);}

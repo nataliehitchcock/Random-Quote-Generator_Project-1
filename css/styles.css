@@ -3,9 +3,9 @@
  * Random Quote Generator - CSS
  */
 
-body {
-  background-color: #36b55c;
-  color: white;
+ body {
+  background-color: #411e07;
+  color: #f1f3f1;
   font-family: 'Playfair Display', serif;
 }
 
@@ -71,6 +71,16 @@ body {
   font-style: normal;
 }
 
+.source-title:before {
+  content: " ";
+  font-style: normal;
+}
+
+.quote-type:before {
+  content: " | ";
+  font-style: normal;
+}
+
 #loadQuote {
   position: fixed;
   width: 12em;
@@ -79,14 +89,15 @@ body {
   margin-left: -6em;
   bottom: 150px;
   border-radius: 4px;
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: #36b55c;
+  border: 2px solid #f1f3f1;
+  color: #f1f3f1;
+  background-color: #515351;
   padding: 15px 0;
   transition: .5s ;
 }
+
 #loadQuote:hover {
-  background-color: rgba(255,255,255,.25);
+  background-color: #9fa19f;
 }
 
 #loadQuote:focus {
