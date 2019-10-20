@@ -39,8 +39,8 @@ var quotes = [{
 ];
 // Created a random quote number generator that pulls from the quotes array
 function getRandomQuote(array) {
-var quoteIndex = Math.floor(Math.random() * (quotes.length));{
-var randomQuote = quotes[quoteIndex];
+var quoteIndex = Math.floor(Math.random() * quotes.length);{
+return quotes[quoteIndex];
 }
 }
 // Created a function to print the quotes and change the background color at random
@@ -49,22 +49,23 @@ var message = "";
 var result = getRandomQuote(quotes);
 message = "<p class='quote'>" + result.quote + "</p>";
 message += "<p class='source'>" + result.source;
-if (randomQuote.citation != 'Unknown') {
-  html += '<span class="citation">' + randomQuote.citation + '</span>';
+
+if (result.citation) {
+message += "<p class='citation'>" + result.citation;
 }
-if (randomQuote.year != 'Unknown') {
-  html += '<span class="year">' + randomQuote.year + '</span>';
+
+if (result.year) {
+message += "<p class= 'year'>" + result.year;
 message += "</p>";
+}
 
 document.getElementById('quote-box').innerHTML = message;
 
-randomBackgroundColor();
-    
-setInterval()
-}
+randomBackgroundColor();}
+
 // This allows the quote to change every 12 seconds
 
-setInterval('printQuote()', 12000);
+setInterval(printQuote, 12000)
 
 // Created a random color generator, source: https://www.w3resource.com › javascript-math-exercise-40
 const randomBackgroundColor = () => {
@@ -78,4 +79,4 @@ const randomBackgroundColor = () => {
 
 printQuote();
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);}
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
