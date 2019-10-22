@@ -10,7 +10,7 @@ var quotes = [{
   quote: 'Without music, life would be a mistake',
   source: 'Friedrich Nietzsche',
   citation: 'Brainpickings: Nietzsche on the Power of Music: https://www.brainpickings.org/2015/09/18/nietzsche-on-music/',
-  tags: '#philospher',
+  tags: '#philosopher',
 },
 
 {
