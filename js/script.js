@@ -56,13 +56,13 @@ message = "<p class='quote'>" + result.quote + "</p>";
 message += "<p class='source'>" + result.source; 
 
 if (result.citation) {
-message += <span class='citation'> ${result.citation}</span>
+message += `<span class='citation'> ${result.citation}</span>`
 }
 if (result.year) {
-message += <span class='year'> ${result.year}</span>
+message += `<span class='year'> ${result.year}</span>`
 }
 if (result.tags){
-message += <span class='tags'> ${result.tags}</span>
+message += `<span class='tags'> ${result.tags}</span>`
 }
 message += "</span>" + "</p>";
 
